@@ -146,3 +146,7 @@ if ask is not None:
         st.session_state.messages1.append({"role": "user", "content": prompt})
         st.session_state.messages2.append({"role": "user", "content": prompt})
         asyncio.run(main())
+
+#
+# if __name__ == "__main__":
+#     main()

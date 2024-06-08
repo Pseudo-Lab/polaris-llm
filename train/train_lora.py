@@ -8,6 +8,7 @@ from transformers import (
     TrainingArguments, BitsAndBytesConfig
 )
 from datasets import load_dataset
+from transformers.integrations import MLflowCallback
 from trl import SFTTrainer
 
 

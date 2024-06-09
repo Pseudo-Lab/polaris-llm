@@ -3,9 +3,11 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(layout="wide")
 st.sidebar.page_link("home.py", label="Home")
-st.sidebar.page_link("pages/dataset.py", label="dataset")
-st.sidebar.page_link("pages/prompt.py", label="prompt")
-st.sidebar.page_link("pages/finetuning.py", label="finetuning")
+st.sidebar.page_link("pages/dataset.py", label="Dataset")
+st.sidebar.page_link("pages/prompt.py", label="Prompt")
+st.sidebar.page_link("pages/finetuning.py", label="FT")
+st.sidebar.page_link("pages/b2ft.py", label="B2FT")
+st.sidebar.page_link("pages/llmvs.py", label="LLMvs")
 # with st.sidebar:
 #     selected = option_menu("Menu", ["Dataset", "Prompt", "FT", "B2FT", "LLMvs"],
 #         icons=['house', 'gear', 'gear', 'gear', 'gear'], menu_icon="cast", default_index=0)

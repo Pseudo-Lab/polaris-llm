@@ -99,7 +99,7 @@ async def run_prompt(placeholder, model, message_history):
             chat_entry = st.chat_message(name=message["role"])
             chat_entry.write(message["content"])
         assistant = st.chat_message(name="assistant")
-        # assistant.image("images/loading-gif.gif", width=25)
+        # assistant.images("images/loading-gif.gif", width=25)
 
         with open("images/loading-gif.gif", "rb") as file:
             contents = file.read()

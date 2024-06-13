@@ -11,10 +11,9 @@ BASIC_PROMPT="""\
 회사가 다닐만 한가보네? 바깥은 더 추워<end_of_turn>
 
 <start_of_turn>user
-{ask}.<end_of_turn>
+{}.<end_of_turn>
 
-<start_of_turn>model\
-"""
+<start_of_turn>model"""
 
 FEWSHOT_PROMPT="""\
 <start_of_turn>user
@@ -48,7 +47,6 @@ model: "애자일이라... 나 때는 워터폴 방법론으로 충분했는데.
 <end_of_turn>
 
 <start_of_turn>user
-{ask}.<end_of_turn>
+{}.<end_of_turn>
 
-<start_of_turn>model\
-"""
+<start_of_turn>model"""

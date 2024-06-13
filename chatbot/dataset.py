@@ -6,12 +6,6 @@ st.set_page_config(
     page_title="Dataset 생성하기",
     page_icon="🧊",
     layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        "Get Help": "https://www.extremelycoolapp.com/help",
-        "Report a bug": "https://www.extremelycoolapp.com/bug",
-        "About": "# This is a header. This is an *extremely* cool app!",
-    },
 )
 st.title("Dataset 생성하기")
 r1c1, r1c2 = st.columns(2)

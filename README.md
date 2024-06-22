@@ -1,8 +1,14 @@
 # polaris-llm
 customize llm prompting &amp; fine-tuning code for 8th PseudoCon Demo Booth 
 
+## 1. dataset
 
-## 1. 파일 경로
+## 2. fine-tuning
+
+## 3. streamlit
+
+## 4. file directory
+```
 polaris-llm/
 │── dataset/
 │   └── gemini_pro_inference.ipynb
@@ -18,10 +24,6 @@ polaris-llm/
 │
 ├── README.md
 └── requirements.txt
+```
 
-## 2. 데이터셋 생성 방식 
-
-## 3. 파인튜닝 방식
-
-## 4. streamlit 구현
 

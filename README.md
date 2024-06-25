@@ -6,6 +6,10 @@ customize llm prompting &amp; fine-tuning code for 8th PseudoCon Demo Booth
 ## 2. fine-tuning
 
 ## 3. streamlit
+### streamlit run
+```
+streamlit run llmvs.py
+```
 
 ## 4. file directory
 ```

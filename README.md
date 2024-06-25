@@ -14,14 +14,14 @@ polaris-llm/
 │   └── gemini_pro_inference.ipynb
 │
 ├── finetuning/
-│   ├── 1_ngrok_gpu_running_llmvs.ipynb
-│   └── 2_gemma_fine_tuning.ipynb
+│   └── 1_gemma_fine_tuning.ipynb
+│
+│── serving/
+│   └── 1_ngrok_gpu_running_llmvs.ipynb
 │
 ├── streamlit/
-│   ├── home.py
-│   └── pages/
-│       └── llmvs.py
-│
+│   └── llmvs.py
+│    
 ├── README.md
 └── requirements.txt
 ```

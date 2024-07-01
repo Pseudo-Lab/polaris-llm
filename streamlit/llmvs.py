@@ -1,8 +1,17 @@
 import streamlit as st
+import requests
+import json
 from langchain_community.chat_models import ChatOllama
 
 gemma = 'gemma:7b-instruct'
 llama = 'llama3:8b'
+finetuned = 'bcmin1018/gemma-7b-persona-pessimistic:latest'
+
+def response_component(model, prompt):
+    with st.chat_message(model):
+        with st.spinner("대답 중 ..."):
+            response = st.write_stream(get_response(model=model, prompt=prompt, url=ollama_ngrok_url))
+    st.session_state.messages.append({"role": model, "content": response})
 
 def get_response(model, prompt, url):
     model_gemma = ChatOllama(
@@ -10,9 +19,25 @@ def get_response(model, prompt, url):
     )
     return model_gemma.stream(prompt)
 
+def response_component_ft(model, prompt):
+    with st.chat_message(model):
+        with st.spinner("대답 중 ..."):
+          data = {
+            'prompt': prompt,
+            'max_tokens': 256
+          }
+          json_data = json.dumps(data)
+          response = st.write(requests.post(vllm_ngrok_url, data = json_data,
+                                   headers = {'Content-Type': 'application/json'}))
+    st.session_state.messages.append({"role": model, "content": response})
+
+  # history_llm_format.append({"role": "assistant", "content": response.json()})
+  # return history_llm_format
+
 
 with st.sidebar:
     ollama_ngrok_url = st.text_input("Ollama Ngrok URL", key="ollama_ngrok_url")
+    vllm_ngrok_url = st.text_input("Vllm Ngrok URL", key="vllm_ngrok_url")
 
 
 st.title("💬 당신 삶의 북극성은 무엇인가요?:star:")
@@ -35,13 +60,10 @@ if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
 
     # 호출 및 전처리
-    with st.chat_message(gemma):
-        with st.spinner("대답 중 ..."):
-            response = st.write_stream(get_response(model=gemma, prompt=prompt, url=ollama_ngrok_url))
-    st.session_state.messages.append({"role": gemma, "content": response})
+    response_component(finetuned, prompt)
+    # response_component(gemma, prompt)
+    # response_component(llama, prompt)
 
-    with st.chat_message(llama):
-        with st.spinner("대답 중 ..."):
-            response = st.write_stream(get_response(model=llama, prompt=prompt, url=ollama_ngrok_url))
-    st.session_state.messages.append({"role": llama, "content": response})
+    # if vllm_ngrok_url:
+    #     response_component_ft(finetuned, prompt)
 
